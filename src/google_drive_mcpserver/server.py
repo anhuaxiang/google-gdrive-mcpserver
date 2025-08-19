@@ -43,11 +43,11 @@ async def list_file(
                         "before the end of the files list has been reached.")
             )
         ] = None,
-        query: Annotated[
+        q: Annotated[
             Optional[str],
             Field(
                 description=(
-                        "Search query")
+                        "A query for filtering the file results. See the \"Search for Files\" guide for supported syntax.")
             )
         ] = None,
         pageToken: Annotated[
@@ -62,11 +62,10 @@ async def list_file(
         "orderBy": orderBy,
         "pageSize": pageSize,
         "pageToken": pageToken,
+        "q": q,
         "fields": "nextPageToken, files(id, name, mimeType, modifiedTime, size, webViewLink)"
     }
-    if query:
-        escaped_query = query.replace("\\", "\\\\").replace("'", "\\'")
-        params["q"] = f"fullText contains '{escaped_query}'"
+
 
     params = {k: v for k, v in params.items() if v is not None}
     results = service.files().list(**params).execute()
