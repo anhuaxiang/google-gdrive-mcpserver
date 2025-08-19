@@ -1,6 +1,6 @@
 [project]
 name = "google-drive-mcpserver"
-version = "0.1.0"
+version = "0.1.2"
 description = "Google Calendar MCP Server"
 authors = [
     {name = "yanrujing", email = "rujing.yan@protagonist-ai.com"}

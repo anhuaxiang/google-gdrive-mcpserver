@@ -57,7 +57,7 @@ async def list_file(
                              "This should be set to the value of 'nextPageToken' from the previous response.")
             )
         ] = None
-) -> List[dict]:
+) -> dict:
     params = {
         "orderBy": orderBy,
         "pageSize": pageSize,
@@ -69,9 +69,7 @@ async def list_file(
 
     params = {k: v for k, v in params.items() if v is not None}
     results = service.files().list(**params).execute()
-    files = results.get("files", [])
-
-    return files
+    return results
 
 
 @mcp.tool(description="Permanently delete a file from Google Drive.")
