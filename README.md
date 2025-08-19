@@ -1,6 +1,6 @@
 # Google Drive MCP
 
-A Model Context Protocol (MCP) server that provides Google Calendar integration for AI assistants like Claude.
+A Model Context Protocol (MCP) server that provides Google Drive integration for AI assistants like Claude.
 
 
 ```json
