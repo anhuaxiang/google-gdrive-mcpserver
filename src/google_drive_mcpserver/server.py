@@ -16,8 +16,9 @@ creds = Credentials(
     client_id=os.environ["GOOGLE_CLIENT_ID"],
     client_secret=os.environ["GOOGLE_CLIENT_SECRET"],
     scopes=[
-        "https://www.googleapis.com/auth/calendar",
-        "https://www.googleapis.com/auth/calendar.events"
+        "https://www.googleapis.com/auth/drive",
+        "https://www.googleapis.com/auth/drive.photos.readonly",
+        "https://www.googleapis.com/auth/drive.appdata"
     ]
 )
 service = build("drive", "v3", credentials=creds)
